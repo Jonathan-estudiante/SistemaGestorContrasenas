@@ -37,13 +37,13 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PanelLogin.setBackground(new java.awt.Color(246, 243, 255));
+        PanelLogin.setBackground(new java.awt.Color(102, 204, 255));
 
         jtxt_usuario.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jtxt_usuario.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 153, 255), new java.awt.Color(204, 153, 255)));
+        jtxt_usuario.setBorder(null);
 
         jtxt_contraseña.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jtxt_contraseña.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 153, 255), new java.awt.Color(204, 153, 255)));
+        jtxt_contraseña.setBorder(null);
         jtxt_contraseña.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtxt_contraseñaKeyTyped(evt);
@@ -54,16 +54,16 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Iniciar Sesión");
 
-        jLabel2.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel2.setBackground(new java.awt.Color(150, 232, 240));
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText(" Usuario");
-        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 153, 255), null));
         jLabel2.setOpaque(true);
 
-        jLabel3.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel3.setBackground(new java.awt.Color(150, 232, 240));
         jLabel3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText(" Contraseña");
-        jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 153, 255), null));
         jLabel3.setOpaque(true);
 
         txt_mostrar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -77,8 +77,9 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/usuario (1).png"))); // NOI18N
 
-        btn_entrar.setBackground(new java.awt.Color(153, 153, 255));
+        btn_entrar.setBackground(new java.awt.Color(102, 204, 255));
         btn_entrar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btn_entrar.setForeground(new java.awt.Color(255, 255, 255));
         btn_entrar.setText("Entrar");
         btn_entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,8 +87,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 255));
+        jButton2.setBackground(new java.awt.Color(102, 204, 255));
         jButton2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Registrarse");
 
         javax.swing.GroupLayout PanelLoginLayout = new javax.swing.GroupLayout(PanelLogin);
@@ -144,7 +146,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_entrar)
                     .addComponent(jButton2))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

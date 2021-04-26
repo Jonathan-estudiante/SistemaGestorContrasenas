@@ -1358,7 +1358,7 @@ public class Principal extends javax.swing.JFrame implements Comunicacion {
                 Inicio.setSelectedIndex(3);
                 desbloquear2();
                 nuevaContraseña = null;
-                
+
             } else {
                 JOptionPane.showMessageDialog(rootPane, "No se puede eliminar la contraseña.", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
@@ -1511,7 +1511,7 @@ public class Principal extends javax.swing.JFrame implements Comunicacion {
         contadorClick2++;
         if (contadorClick2 == 2) {
             if (JOptionPane.showConfirmDialog(rootPane, "¿Desea modificar este registro?",
-                    "Editar Producto", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                    "Editar Registro", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                 Inicio.setSelectedIndex(1);
                 jtxt_contraseña.setText(utilidades.desencriptar(nc.getContraseña()));
                 jtxt_repetirContraseña.setText(jtxt_contraseña.getText());
@@ -1552,7 +1552,7 @@ public class Principal extends javax.swing.JFrame implements Comunicacion {
         contadorClick++;
         if (contadorClick == 2) {
             if (JOptionPane.showConfirmDialog(rootPane, "¿Desea eliminar el borrador?",
-                    "Editar Producto", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                    "Eliminar Registro", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                 jtxt_contraseña.setText(utilidades.desencriptar(b.getContraseña()));
                 jtxt_repetirContraseña.setText(jtxt_contraseña.getText());
                 jcb_tipoContraseña.setSelectedItem(b.getTipoContraseña());
@@ -1569,6 +1569,23 @@ public class Principal extends javax.swing.JFrame implements Comunicacion {
                     nuevoBorrador = null;
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "No se puede eliminar el borrador.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                if (JOptionPane.showConfirmDialog(rootPane, "¿Entonces desea guardar este registro?",
+                        "Guardar Registro", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                    Inicio.setSelectedIndex(1);
+                    jtxt_contraseña.setText(utilidades.desencriptar(b.getContraseña()));
+                    jtxt_repetirContraseña.setText(jtxt_contraseña.getText());
+                    jcb_tipoContraseña.setSelectedItem(b.getTipoContraseña());
+                    nombre_SitioApp.setText(b.getNombreSitioApp());
+                    jtxt_propietario.setText(b.getPropietario());
+                    nuevoBorrador = b;
+                    desbloquear();
+                    bloquear();
+                    controladorBorrador.elminarBorrador(nuevoBorrador);
+                    List<Borrador> contraseñaNombre = controladorBorrador.obtenerContraseñasNoGuardadas();
+                    modeloTablaContraseñasNoGuardadas.setPersonas(contraseñaNombre);
+                    modeloTablaContraseñasNoGuardadas.fireTableDataChanged();
                 }
             }
             contadorClick = 0;

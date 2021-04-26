@@ -74,6 +74,7 @@ public class Borradordb {
         }
         return registrar;
     }
+        
     //Método traer a todas las contraseñas******************************************************************************************
     public List<Borrador> obtenerContraseñasNoGuardadas() {
 
